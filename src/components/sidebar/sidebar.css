@@ -29,8 +29,11 @@
 }
 .sidebarItem > img {
   margin-top: 15px;
-  width: 240px;
-  height: 240px;
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
   overflow: hidden;
 }
 .sidebarItem > p {
