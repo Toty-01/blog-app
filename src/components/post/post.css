@@ -15,6 +15,7 @@
 }
 .postCats {
   margin-bottom: 0.5rem;
+  overflow: visible;
 }
 .Postcat {
   font-family: 'Lora', serif;
