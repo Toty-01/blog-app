@@ -1,0 +1,7 @@
+.settings {
+  margin-top: 4rem;
+  display: flex;
+}
+.settingsWrapper {
+  flex: 9;
+}
