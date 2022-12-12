@@ -8,8 +8,7 @@ const Sidebar = () => {
         <span className="sidebarTitle">ABOUT ME</span>
         <img src={img} alt="" />
         <p>
-          Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
-          amet ex esse.Sunt eu ut nostrud id quis proident.
+          Laboris sunt aute cupidatat velit magna velit ullamco dolore 
         </p>
       </div>
       <div className="sidebarItem">
