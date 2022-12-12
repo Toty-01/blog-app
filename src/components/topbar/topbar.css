@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 .topRight {
   justify-content: space-evenly;
@@ -32,6 +33,7 @@
   display: flex;
   list-style: none;
   justify-content: center;
+  overflow: visible;
 }
 .topListItem {
   margin-right: 1rem;
@@ -56,4 +58,14 @@
   font-size: 18px;
   color: #666;
   cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .topLeft {
+    display: none;
+  }
+  .topRight {
+    width: 20%;
+  }
+  
 }
