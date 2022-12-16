@@ -1,0 +1,71 @@
+.top {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(237, 236, 236, 0.898);
+  display: flex;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  z-index: 500;
+}
+.topLeft, .topRight {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.topRight {
+  justify-content: space-evenly;
+}
+.topLeft {
+  display: flex;
+}
+.topLeft > i {
+  font-size: 20px;
+  margin-right: 0.4rem;
+  color: grey;
+}
+.topLeft i:hover {
+  cursor: pointer;
+}
+.topList {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  overflow: visible;
+}
+.topListItem {
+  margin-right: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: lighter;
+  overflow: visible;
+}
+.topList li:hover {
+  cursor: pointer;
+}
+.topCenter {
+  flex: 6;
+}
+.topImg {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.topSearchIcon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .topLeft {
+    display: none;
+  }
+  .topRight {
+    width: 20%;
+  }
+  
+}
