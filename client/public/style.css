@@ -1,7 +1,0 @@
-*, body, html, ul, li {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: 'Acme', sans-serif;
-   overflow-x: hidden;
-}
