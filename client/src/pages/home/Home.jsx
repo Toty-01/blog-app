@@ -11,16 +11,16 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get("/posts");
-      console.log(res)
-    }
-    fetchPosts()
-  },[])
+      setPosts(res.data);
+    };
+    fetchPosts();
+  },);
 
   return (
     <>
       <Header />
       <div className='Home'>
-        <Posts />
+        <Posts posts={posts} />
         <Sidebar />
       </div>
     </>
