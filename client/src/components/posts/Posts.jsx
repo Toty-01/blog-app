@@ -3,8 +3,8 @@ import "./posts.css"
 
 export default function Posts({posts}) {
   return (
-    <div className='posts'>
-      {posts.map(p=>(
+    <div className='posts' key={posts}>
+      {posts.map((p) => (
         <Post post={p} />
       ))}
     </div>

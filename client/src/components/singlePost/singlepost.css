@@ -44,6 +44,12 @@
 .singlePostAutor {
   font-family: 'Times New Roman', serif;
 }
+.aut {
+  text-transform: uppercase;
+}
+.aut:hover {
+  cursor: pointer;
+}
 .singlePostDate {
   font-family: 'Times New Roman', serif;
   font-weight: 600;
