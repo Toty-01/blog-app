@@ -78,7 +78,7 @@
   max-width: 700px;
   border-bottom: 1px solid lightgray;
 }
-.settingsSubmitButton {
+.settingsSubmit {
   align-self: center;
   width: 150px;
   border: none;
@@ -92,7 +92,7 @@
   align-items: center;
   justify-content: center;
 }
-.settingsSubmitButton:hover {
+.settingsSubmit:hover {
   background-color: rgb(1, 114, 114);
 }
 @media screen and (min-width: 900px) {

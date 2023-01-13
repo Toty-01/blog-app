@@ -1,45 +1,108 @@
-import './settings.css'
-import Sidebar from '../../components/sidebar/Sidebar'
-import img from '../../components/img/img (8).jpg'
+import "./settings.css";
+import Sidebar from "../../components/sidebar/Sidebar";
+import { useContext, useState } from "react";
+import { Context } from "../../context/Context";
+import axios from "axios";
 
-export default function Setting() {
-  
+export default function Settings() {
+  const [file, setFile] = useState(null);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/"
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "UPDATE_START" });
+    const updatedUser = {
+      userId: user._id,
+      username,
+      email,
+      password,
+    };
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("name", filename);
+      data.append("file", file);
+      updatedUser.profilePic = filename;
+      try {
+        await axios.post("/upload", data);
+      } catch (err) {}
+    }
+    try {
+      const res = await axios.put("/users/" + user._id, updatedUser);
+      setSuccess(true);
+      dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+    } catch (err) {
+      dispatch({ type: "UPDATE_FAILURE" });
+    }
+  };
+  const CheckinputsEmpty = () => {
+    
+  }
+
   return (
-    <div className='settings'>
+    <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
-          <span className="settingsTitleUpdate"><i class="fa-regular fa-pen-to-square"></i> Mettre à jour</span>
-          <span className="settingsTitleDelete"><i class="fa-solid fa-trash-can"></i> Supprimer compte</span>
+          <span className="settingsUpdateTitle">Mise à jour</span>
+          <span className="settingsDeleteTitle">Supprimer compte (à venir)</span>
         </div>
-        <form className="settingsForm">
+        <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Photo de profil</label>
           <div className="settingsPP">
             <img
-              src={img}
+              src={file ? URL.createObjectURL(file) : PF+user.profilePic}
               alt=""
             />
             <label htmlFor="fileInput">
-              <i className="settingsPPIcon far fa-user-circle"></i>{" "}
+              <i className="settingsPPIcon far fa-user-circle"></i>
             </label>
             <input
-              id="fileInput"
               type="file"
+              id="fileInput"
               style={{ display: "none" }}
-              className="settingsPPInput"
+              onChange={(e) => setFile(e.target.files[0])}
             />
           </div>
-          <label>Utilisateur</label>
-          <input type="text" placeholder="John" name="name" />
+          <label>Nom d'utilisateur</label>
+          <input
+            type="text"
+            placeholder={user.username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
           <label>Email</label>
-          <input type="email" placeholder="exemple@gmail.com" name="email" />
+          <input
+            type="email"
+            placeholder={user.email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <label>Mot de passe</label>
-          <input type="password" placeholder="Mot de passe" name="password" />
-          <button className="settingsSubmitButton" type="submit">
+          <input
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button 
+            className="settingsSubmit" 
+            type="submit"
+            onClick={CheckinputsEmpty}
+          >
             Mettre à jour
           </button>
+          {success && (
+            <span
+              style={{ color: "green", textAlign: "center", marginTop: "20px" }}
+            >
+              Votre profil a bien été mit à jour
+            </span>
+          )}
         </form>
       </div>
-        <Sidebar />
+      <Sidebar />
     </div>
-  )
+  );
 }

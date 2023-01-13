@@ -1,10 +1,9 @@
-import "./sidebar.css"
-import img from "../img/img(5).jpg"
-import { useState, useEffect} from "react"
-import axios from "axios"
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./sidebar.css";
 
-const Sidebar = () => {
+export default function Sidebar() {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
@@ -14,22 +13,20 @@ const Sidebar = () => {
     };
     getCats();
   }, []);
-
   return (
     <div className="sidebar">
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME</span>
-        <img src={img} alt="" />
         <p>
-          Laboris sunt aute cupidatat velit magna velit ullamco dolore 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         </p>
       </div>
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           {cats.map((c) => (
-            <Link className="link" to={`/?cat=${c.name}`}>
-              <li key={c} className="sidebarListItem">{c.name}</li>
+            <Link to={`/?cat=${c.name}`} className="link">
+            <li className="sidebarListItem">{c.name}</li>
             </Link>
           ))}
         </ul>
@@ -39,12 +36,10 @@ const Sidebar = () => {
         <div className="sidebarSocial">
           <i className="sidebarIcon fab fa-facebook-square"></i>
           <i className="sidebarIcon fab fa-twitter-square"></i>
-          <i className="sidebarIcon fab fa-instagram-square"></i>
           <i className="sidebarIcon fab fa-pinterest-square"></i>
+          <i className="sidebarIcon fab fa-instagram-square"></i>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default Sidebar

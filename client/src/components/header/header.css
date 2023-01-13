@@ -6,9 +6,10 @@
   flex-direction: column;
   align-items: center;
   margin-top: 4rem;
+  font-family: "Lora", serif;
+  text-shadow: 2px 2px whitesmoke;
 }
 .headerTitles span {
-  font-family: 'Zen Dots', cursive;
   font-size: 1.6rem;
 }
 .headerTitleSm {
