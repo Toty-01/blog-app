@@ -1,5 +1,5 @@
 .post {
-  max-width: 380px;
+  max-width: 450px;
   margin: 0px 25px 20px 25px;
 }
 .postImg {
@@ -17,7 +17,7 @@
   margin-bottom: 0.5rem;
   overflow: visible;
 }
-.Postcat {
+.postCat {
   font-family: 'Lora', serif;
   font-size: 1.2rem;
   color: #be9656;
@@ -38,9 +38,9 @@ hr {
   width: 60px;
   margin: 0.3rem;
 }
-.postDescription {
+.postDesc {
   line-height: 22px;
-  margin-top: 0.6rem;
+  margin-top: 1rem;
   color: #444;
   overflow: hidden;
   text-overflow: ellipsis;

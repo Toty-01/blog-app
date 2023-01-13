@@ -1,10 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
+import { Context } from "../../context/Context";
+import img from "../img/img(21).jpg"
 
 export default function Sidebar() {
+
   const [cats, setCats] = useState([]);
+  const { user } = useContext(Context);
+  const PF = "http://localhost:5000/images/"
 
   useEffect(() => {
     const getCats = async () => {
@@ -16,10 +21,17 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebarItem">
-        <span className="sidebarTitle">ABOUT ME</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        </p>
+        <span className="sidebarTitle">Mon espace</span>
+        <div className="settingsPP">
+        {user ? (
+          <Link to="/settings">
+            <img className="SidImg" src={PF+user.profilePic} alt="" />
+          </Link>
+        ) : (
+          // eslint-disable-next-line jsx-a11y/alt-text
+          <img src={img}/>
+        )}
+          </div>
       </div>
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>

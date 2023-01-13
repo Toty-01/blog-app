@@ -52,6 +52,12 @@
   text-align: center;
   overflow: visible;
 }
+.SidImg {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .sidebarSocial {
   margin-top: 15px;
   width: 250px;

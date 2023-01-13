@@ -42,7 +42,7 @@ export default function Login() {
           ref={passwordRef}
         />
         <button className="loginButton" type="submit" disabled={isFetching}>
-          Login
+          Se connecter
         </button>
       </form>
       <button className="loginRegisterButton">

@@ -6,7 +6,6 @@ import "./topbar.css";
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
   const PF = "http://localhost:5000/images/"
-
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
@@ -27,12 +26,7 @@ export default function TopBar() {
           </li>
           <li className="topListItem">
             <Link className="link" to="/">
-              A PROPOS
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link className="link" to="/">
-              CONTACT
+              contact
             </Link>
           </li>
           <li className="topListItem">
@@ -43,7 +37,7 @@ export default function TopBar() {
             }
           </li>
           <li className="topListItem" onClick={handleLogout}>
-            {user && "deconnexion"}
+            {user && "DECONNEXION"}
           </li>
         </ul>
       </div>
