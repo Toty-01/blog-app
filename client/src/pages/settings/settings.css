@@ -1,28 +1,25 @@
 .settings {
   margin-top: 5rem;
   display: flex;
+  justify-content: center;
 }
 .settingsWrapper {
-  flex: 9;
   padding: 20px;
+  width: 75%;
 }
 .settingsTitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  justify-content: center;
 }
 .settingsTitle > span > i {
   cursor: pointer;
 }
-.settingsTitleUpdate {
+.settingsUpdateTitle {
   font-size: 25px;
   margin-bottom: 20px;
   color: lightcoral;
-}
-.settingsTitleDelete {
-  color: red;
-  font-size: 16px;
-  cursor: pointer;
 }
 .settingsForm {
   display: flex;

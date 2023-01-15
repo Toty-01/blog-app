@@ -17,7 +17,7 @@ export default function Write() {
       desc,
     };
     if (file) {
-      const data =new FormData();
+      const data = new FormData();
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
@@ -37,10 +37,10 @@ export default function Write() {
         <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       )}
       <form className="writeForm" onSubmit={handleSubmit}>
-        <div className="writeFormGroup">
           <label htmlFor="fileInput">
             <i className="writeIcon fas fa-plus"></i>
           </label>
+        <div className="writeFormGroup">
           <input
             type="file"
             id="fileInput"
@@ -49,7 +49,7 @@ export default function Write() {
           />
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Titre"
             className="writeInput"
             autoFocus={true}
             onChange={e=>setTitle(e.target.value)}
@@ -57,14 +57,14 @@ export default function Write() {
         </div>
         <div className="writeFormGroup">
           <textarea
-            placeholder="Tell your story..."
+            placeholder="Raconte ton histoire..."
             type="text"
             className="writeInput writeText"
             onChange={e=>setDesc(e.target.value)}
           ></textarea>
         </div>
         <button className="writeSubmit" type="submit">
-          Publish
+          Publier
         </button>
       </form>
     </div>

@@ -1,0 +1,15 @@
+h1 {
+  margin-top: 6rem;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.body {
+  height: 100%;
+  background-color: beige;
+}
+p {
+  margin: 3rem;
+  text-align: justify;
+  
+}

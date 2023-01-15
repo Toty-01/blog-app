@@ -78,7 +78,7 @@ export default function SinglePost() {
         )}
         <div className="singlePostInfo">
           <span className="singlePostAuthor">
-            Author:
+            Auteur
             <Link to={`/?user=${post.username}`} className="link">
               <b> {post.username}</b>
             </Link>
@@ -98,7 +98,7 @@ export default function SinglePost() {
         )}
         {updateMode && (
           <button className="singlePostButton" onClick={handleUpdate}>
-            Update
+            Mise à jour
           </button>
         )}
       </div>

@@ -50,6 +50,10 @@ export default function Login() {
           S'incrire
         </Link>
       </button>
+      <p>Vous n'avez pas encore de compte ? <Link to="/register">
+        S'incrire </Link>
+      </p>
+      
     </div>
   );
 }

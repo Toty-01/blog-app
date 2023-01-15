@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   const { user } = useContext(Context);
@@ -21,6 +22,7 @@ function App() {
       <TopBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/contact" element={<Contact />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />
         <Route path="/write" element={user ? <Write /> : <Register />} />
         <Route path="/login" element={user ? <Home /> : <Login />} />

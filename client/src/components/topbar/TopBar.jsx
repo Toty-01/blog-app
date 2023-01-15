@@ -25,7 +25,7 @@ export default function TopBar() {
             </Link>
           </li>
           <li className="topListItem">
-            <Link className="link" to="/">
+            <Link className="link" to="/contact">
               contact
             </Link>
           </li>
@@ -37,7 +37,10 @@ export default function TopBar() {
             }
           </li>
           <li className="topListItem" onClick={handleLogout}>
-            {user && "DECONNEXION"}
+            {user && 
+              <Link className="link">
+                <i class="fas fa-sign-out-alt"></i>
+              </Link>}
           </li>
         </ul>
       </div>

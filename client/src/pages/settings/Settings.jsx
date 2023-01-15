@@ -1,5 +1,4 @@
 import "./settings.css";
-import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
@@ -42,7 +41,7 @@ export default function Settings() {
     }
   };
   const CheckinputsEmpty = () => {
-    
+  
   }
 
   return (
@@ -50,7 +49,6 @@ export default function Settings() {
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <span className="settingsUpdateTitle">Mise à jour</span>
-          <span className="settingsDeleteTitle">Supprimer compte (à venir)</span>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Photo de profil</label>
@@ -102,7 +100,6 @@ export default function Settings() {
           )}
         </form>
       </div>
-      <Sidebar />
     </div>
   );
 }

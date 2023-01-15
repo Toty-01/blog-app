@@ -10,27 +10,33 @@
   object-fit: cover;
   border-radius: 0.6rem;
 }
-.plus-logo {
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  border: 2px solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: rgb(153, 149, 149);
-  font-size: 20px;
-}
 .writeForm {
   position: relative;
 }
 .writeInput {
   padding: 1rem;
-  border: none;
+  border: 2px solid gray;
   font-size: 1.5rem;
   margin-left: 1rem;
+  border-radius: 1.6rem;
   width: 60vw;
+}
+.writeIcon {
+  margin-left: 120px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  padding: 0.7rem;
+  background-color: teal;
+  color: aliceblue;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.writeIcon:hover {
+  cursor: pointer;
+}
+.writeIcon:hover, .writeSubmit:hover {
+  transition: all 1s;
+  background-color: rgb(1, 80, 80);
 }
 .writeInput:focus {
   outline: none;
@@ -39,11 +45,15 @@
   margin-left: 150px;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
 }
 .writeText {
   font-size: 1.4rem;
   font-family: 'Times New Roman', Times, serif;
   letter-spacing: 0.2rem;
+  margin-top: 2rem;
+  height: 120px;
 }
 .writeSubmit {
    display: flex;
@@ -58,7 +68,9 @@
    border-radius: 0.4rem;
    background-color: teal;
    cursor: pointer;
+   margin-bottom: 4rem;
 }
+
 @media screen and (max-width: 900px) {
   .writeFormGroup {
     margin-left: 10%;
@@ -69,5 +81,8 @@
   .writeText {
     font-size: 1rem;
     letter-spacing: 0;
+  }
+  .writeIcon {
+    margin-left: 15%;
   }
 }
