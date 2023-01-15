@@ -25,6 +25,11 @@ export default function Sidebar() {
           </div>
       </div>
       <div className="sidebarItem">
+        <span className="sidebarTitle">Info</span>
+        <p>{!user ? "Bonjour et Bienvenue sur notre site, n'hésitez pas à vous connecter pour créer vos propres posts" : 
+        "Vous pouvez créer, supprimer et mettre à jour vos posts"}</p>
+      </div>
+      <div className="sidebarItem">
         <span className="sidebarTitle">Nous suivre</span>
         <div className="sidebarSocial">
           <i className="sidebarIcon fab fa-facebook-square"></i>
