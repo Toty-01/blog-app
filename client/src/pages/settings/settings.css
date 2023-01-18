@@ -5,7 +5,6 @@
 }
 .settingsWrapper {
   padding: 20px;
-  width: 75%;
 }
 .settingsTitle {
   display: flex;
@@ -28,12 +27,13 @@
 .settingsPP {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .settingsPP > img {
-  height: 70px;
-  width: 70px;
+  height: 90px;
+  width: 90px;
   border-radius: 20px;
   object-fit: cover;
 }
@@ -88,12 +88,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 .settingsSubmit:hover {
   background-color: rgb(1, 114, 114);
 }
-@media screen and (min-width: 900px) {
-  .settingsWrapper {
-    margin-left: 10%;
-  }
+.settingsForm > label:first-child {
+  text-align: center;
+}
+.nombre {
+  color: red;
 }

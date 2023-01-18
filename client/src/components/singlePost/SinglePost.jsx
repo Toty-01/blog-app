@@ -52,13 +52,15 @@ export default function SinglePost() {
           <img src={PF + post.photo} alt="" className="singlePostImg" />
         )}
         {updateMode ? (
-          <input
-            type="text"
-            value={title}
-            className="singlePostTitleInput"
-            autoFocus
-            onChange={(e) => setTitle(e.target.value)}
-          />
+          <div className="inputs">
+            <input
+              type="text"
+              value={title}
+              className="singlePostTitleInput"
+              autoFocus
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
         ) : (
           <h1 className="singlePostTitle">
             {title}
@@ -78,9 +80,9 @@ export default function SinglePost() {
         )}
         <div className="singlePostInfo">
           <span className="singlePostAuthor">
-            Auteur
+            Auteur : 
             <Link to={`/?user=${post.username}`} className="link">
-              <b> {post.username}</b>
+              <b className="user"> {post.username}</b>
             </Link>
           </span>
           <span className="singlePostDate">
@@ -88,18 +90,23 @@ export default function SinglePost() {
           </span>
         </div>
         {updateMode ? (
-          <textarea
-            className="singlePostDescInput"
-            value={desc}
-            onChange={(e) => setDesc(e.target.value)}
-          />
+          <div className="inputs">
+            <textarea
+              className="singlePostDescInput"
+              rows={5}
+              value={desc}
+              onChange={(e) => setDesc(e.target.value)}
+            />
+          </div>
         ) : (
           <p className="singlePostDesc">{desc}</p>
         )}
         {updateMode && (
-          <button className="singlePostButton" onClick={handleUpdate}>
-            Mise à jour
-          </button>
+          <div className="btnBottom">
+            <button className="singlePostButton" onClick={handleUpdate}>
+              Mise à jour
+            </button>
+          </div>
         )}
       </div>
     </div>

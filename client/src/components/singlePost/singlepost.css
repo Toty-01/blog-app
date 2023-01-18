@@ -1,9 +1,9 @@
 .singlePost {
-  flex: 8;
+  flex: 9;
   margin-top: 4rem;
 }
 .singlePostWrapper {
-  padding-left: 1.2rem;
+  padding: 0 1rem;
 }
 .singlePostImg {
   width: 100%;
@@ -44,7 +44,7 @@
 .singlePostAutor {
   font-family: 'Times New Roman', serif;
 }
-.aut {
+.user {
   text-transform: uppercase;
 }
 .aut:hover {
@@ -60,6 +60,8 @@
   line-height: 1.6rem;
   margin: 1rem;
   text-align: justify;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 .singlePostDesc::first-letter {
   text-transform: uppercase;
@@ -67,4 +69,42 @@
   font-weight: 600;
   font-size: larger;
   letter-spacing: 0.1rem;
+}
+.singlePostDescInput {
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  width: 80%;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.singlePostTitleInput {
+  padding: 0.8rem;
+  margin: 2rem 0;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.inputs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.singlePostButton {
+  padding: 0.7rem 1rem;
+  border-radius: 0.6rem;
+  background-color: teal;
+  border: none;
+  color: aliceblue;
+}
+.singlePostButton:hover {
+  background-color: rgb(2, 67, 67);
+  cursor: pointer;
+}
+.btnBottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+input {
+  font-family: 'Lora', serif;
 }

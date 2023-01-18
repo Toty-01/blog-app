@@ -6,9 +6,12 @@ import "./topbar.css";
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
   const PF = "http://localhost:5000/images/"
+
   const handleLogout = () => {
+    
     dispatch({ type: "LOGOUT" });
   };
+
   return (
     <div className="top">
       <div className="topLeft">
@@ -39,7 +42,7 @@ export default function TopBar() {
           <li className="topListItem" onClick={handleLogout}>
             {user && 
               <Link className="link">
-                <i class="fas fa-sign-out-alt"></i>
+                <i className="fas fa-sign-out-alt"></i>
               </Link>}
           </li>
         </ul>

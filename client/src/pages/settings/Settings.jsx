@@ -5,7 +5,6 @@ import axios from "axios";
 
 export default function Settings() {
   const [file, setFile] = useState(null);
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
@@ -18,7 +17,6 @@ export default function Settings() {
     dispatch({ type: "UPDATE_START" });
     const updatedUser = {
       userId: user._id,
-      username,
       email,
       password,
     };
@@ -30,19 +28,18 @@ export default function Settings() {
       updatedUser.profilePic = filename;
       try {
         await axios.post("/upload", data);
-      } catch (err) {}
-    }
+      } catch (err) {
+      }
+    } else if (( updatedUser.email.length > 3 && updatedUser.password.length > 3) ) {
     try {
       const res = await axios.put("/users/" + user._id, updatedUser);
-      setSuccess(true);
+      setSuccess(true)
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
       dispatch({ type: "UPDATE_FAILURE" });
     }
+    }
   };
-  const CheckinputsEmpty = () => {
-  
-  }
 
   return (
     <div className="settings">
@@ -67,12 +64,6 @@ export default function Settings() {
               onChange={(e) => setFile(e.target.files[0])}
             />
           </div>
-          <label>Nom d'utilisateur</label>
-          <input
-            type="text"
-            placeholder={user.username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
           <label>Email</label>
           <input
             type="email"
@@ -87,15 +78,20 @@ export default function Settings() {
           <button 
             className="settingsSubmit" 
             type="submit"
-            onClick={CheckinputsEmpty}
           >
             Mettre à jour
           </button>
-          {success && (
+          {success ? (
             <span
               style={{ color: "green", textAlign: "center", marginTop: "20px" }}
             >
               Votre profil a bien été mit à jour
+            </span>
+          ) : (
+            <span
+              style={{ color: "tear", textAlign: "center", marginTop: "20px" }}
+            >
+              Pour mettre à jour votre profil, veuillez remplir au moins <b className="nombre">3</b> caractères dans chaque champs
             </span>
           )}
         </form>

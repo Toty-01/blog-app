@@ -37,9 +37,11 @@ export default function Write() {
         <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       )}
       <form className="writeForm" onSubmit={handleSubmit}>
+          <div className="plus">
           <label htmlFor="fileInput">
             <i className="writeIcon fas fa-plus"></i>
           </label>
+          </div>
         <div className="writeFormGroup">
           <input
             type="file"

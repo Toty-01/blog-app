@@ -2,9 +2,17 @@
   max-width: 450px;
   margin: 0px 25px 20px 25px;
 }
+.post-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .postImg {
-  width: 80%;
-  margin: 2rem;
+  width: 90%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
   object-fit: cover;
   border-radius: 1rem;
 }
@@ -27,6 +35,7 @@ hr {
   margin: 0.3rem;
 }
 .postDesc {
+  text-align: center;
   line-height: 22px;
   margin-top: 1rem;
   color: #444;
