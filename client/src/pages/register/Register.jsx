@@ -57,7 +57,7 @@ export default function Register() {
           Se connecter
         </Link>
       </button>
-      {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
+      {error && <span style={{color:"red", marginTop:"10px"}}>Une érreur s'est produite</span>}
     </div>
   );
 }

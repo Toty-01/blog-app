@@ -8,6 +8,7 @@ export default function Settings() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const { user, dispatch } = useContext(Context);
   const PF = "http://localhost:5000/images/"
@@ -30,16 +31,17 @@ export default function Settings() {
         await axios.post("/upload", data);
       } catch (err) {
       }
-    } else if (( updatedUser.email.length > 3 && updatedUser.password.length > 3) ) {
-    try {
+    }
+    try { 
       const res = await axios.put("/users/" + user._id, updatedUser);
-      setSuccess(true)
+      setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+      alert('Profil mit à jour')
     } catch (err) {
       dispatch({ type: "UPDATE_FAILURE" });
+      setError(true);
     }
-    }
-  };
+  }
 
   return (
     <div className="settings">
@@ -66,12 +68,14 @@ export default function Settings() {
           </div>
           <label>Email</label>
           <input
+            className="inp"
             type="email"
             placeholder={user.email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Mot de passe</label>
           <input
+            className="inp"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -81,17 +85,18 @@ export default function Settings() {
           >
             Mettre à jour
           </button>
-          {success ? (
+          {success && (
             <span
               style={{ color: "green", textAlign: "center", marginTop: "20px" }}
             >
               Votre profil a bien été mit à jour
             </span>
-          ) : (
+          )}
+          {error && (
             <span
-              style={{ color: "tear", textAlign: "center", marginTop: "20px" }}
+              style={{ color: "red", textAlign: "center", marginTop: "20px" }}
             >
-              Pour mettre à jour votre profil, veuillez remplir au moins <b className="nombre">3</b> caractères dans chaque champs
+              Votre profil n'a pas pu être mit à jour
             </span>
           )}
         </form>

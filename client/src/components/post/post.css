@@ -1,6 +1,10 @@
 .post {
   max-width: 450px;
   margin: 0px 25px 20px 25px;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  border: 2px solid rgb(240, 240, 240);
+  box-shadow: 10px 5px 5px lightgray;
 }
 .post-img {
   width: 100%;
