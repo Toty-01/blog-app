@@ -62,6 +62,7 @@
   letter-spacing: 0.2rem;
   margin-top: 2rem;
   height: 120px;
+  margin-bottom: 0.4rem;
 }
 .writeSubmit {
    display: flex;

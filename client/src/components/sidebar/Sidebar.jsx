@@ -16,7 +16,7 @@ export default function Sidebar() {
         <div className="settingsPP">
         {user ? (
           <Link to="/settings">
-            <img className="SidImg" src={PF+user.profilePic} alt="" />
+            <img className="SidImg" src={PF+user.profilePic} alt="My pic" />
           </Link>
         ) : (
           // eslint-disable-next-line jsx-a11y/alt-text

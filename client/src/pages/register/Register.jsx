@@ -12,6 +12,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(false);
+    if(username.length > 3 && email.length > 3 && password.length > 3 ) {
     try {
       const res = await axios.post("/auth/register", {
         username,
@@ -22,6 +23,7 @@ export default function Register() {
     } catch (err) {
       setError(true);
     }
+    } setError(true);
   };
   return (
     <div className="register">
@@ -57,7 +59,7 @@ export default function Register() {
           Se connecter
         </Link>
       </button>
-      {error && <span style={{color:"red", marginTop:"10px"}}>Une érreur s'est produite</span>}
+      {error && <span style={{color:"red", marginTop:"10px"}}>Une érreur s'est produite, veillez à saisir plus de 3 caractères</span>}
     </div>
   );
 }
