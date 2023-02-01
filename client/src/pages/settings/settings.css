@@ -55,14 +55,14 @@
 .settingsPPButton:focus {
   outline-style: none;
 }
-.settingsForm > label {
+label {
   font-size: 20px;
   margin-top: 20px;
 }
 .settingsPPInput {
   width: 30%;
 }
-.settingsForm > input {
+input {
   color: gray;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -101,4 +101,9 @@
 }
 .inp {
   width: 250px;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -32,14 +32,14 @@ export default function Settings() {
       } catch (err) {
       }
     }
-    try { 
-      const res = await axios.put("/users/" + user._id, updatedUser);
-      setSuccess(true);
-      dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-      alert('Profil mit à jour')
-    } catch (err) {
-      dispatch({ type: "UPDATE_FAILURE" });
-      setError(true);
+    if (email.length > 3 && password.length > 3) {
+    const res = await axios.put("/users/" + user._id, updatedUser);
+    setSuccess(true);
+    dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+    alert('Profil mit à jour')
+    } else {
+    dispatch({ type: "UPDATE_FAILURE" });
+    setError(true);
     }
   }
 
@@ -66,19 +66,21 @@ export default function Settings() {
               onChange={(e) => setFile(e.target.files[0])}
             />
           </div>
-          <label>Email</label>
-          <input
-            className="inp"
-            type="email"
-            placeholder={user.email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label>Mot de passe</label>
-          <input
-            className="inp"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+            <div className="inputs">
+            <label>Email</label>
+            <input
+              className="inp"
+              type="email"
+              placeholder={user.email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>Mot de passe</label>
+            <input
+              className="inp"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
           <button 
             className="settingsSubmit" 
             type="submit"
@@ -96,7 +98,7 @@ export default function Settings() {
             <span
               style={{ color: "red", textAlign: "center", marginTop: "20px" }}
             >
-              Votre profil n'a pas pu être mit à jour
+              Votre profil n'a pas pu être mit à jour, veillez à saisir plus de 3 caractères
             </span>
           )}
         </form>

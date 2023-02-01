@@ -1,13 +1,13 @@
 .singlePost {
   flex: 9;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .singlePostWrapper {
   padding: 0 1rem;
 }
 .singlePostImg {
   width: 100%;
-  max-width: 700px;
+  max-width: 550px;
   object-fit: cover;
   display: flex;
   margin: 0 auto;
@@ -62,6 +62,8 @@
   text-align: justify;
   text-align: center;
   margin-bottom: 3rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 .singlePostDesc::first-letter {
   text-transform: uppercase;
@@ -111,4 +113,11 @@
 }
 input {
   font-family: 'Lora', serif;
+}
+
+@media screen and (max-width: 700px) {
+.singlePostDesc {
+  margin-left: 0;
+  margin-right: 0;
+}
 }
