@@ -66,5 +66,11 @@
   .topRight {
     width: 20%;
   }
+  .topList {
+    margin-left: 1rem;
+  }
+  .topListItem {
+    margin-left: -0.5rem;
+  }
   
 }

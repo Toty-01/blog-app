@@ -1,7 +1,7 @@
 .post {
   max-width: 420px;
   margin: 0px 15px 20px 15px;
-  border-radius: 2rem;
+  border-radius: 1rem;
   margin-top: 1rem;
   border: 2px solid rgb(240, 240, 240);
   box-shadow: 10px 5px 5px lightgray;
@@ -18,7 +18,12 @@
   justify-content: center;
   align-items: center;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+}
+.postImg:hover {
+  transform: scale(1.02);
+  transition: all 0.6s;
+  box-shadow: 8px 6px 4px lightgray;
 }
 .postInfo {
   display: flex;
@@ -39,6 +44,7 @@ hr {
   margin: 0.3rem;
 }
 .postDesc {
+  margin: 0.5rem;
   text-align: center;
   line-height: 22px;
   margin-top: 1rem;
@@ -48,4 +54,5 @@ hr {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  white-space: pre-wrap;
 }

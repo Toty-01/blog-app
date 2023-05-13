@@ -16,6 +16,7 @@
 .singlePostTitle {
   text-align: center;
   margin: 1rem;
+  margin-left: 10%;
   font-family: 'Lora', serif;
   font-size: 1.9rem;
 }
@@ -35,11 +36,12 @@
   color: rgba(234, 67, 37, 0.806);
 }
 .singlePostInfo {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: space-around;
   font-size: 1.2rem;
   color: #b39656;
+  margin-top: 2rem;
 }
 .singlePostAutor {
   font-family: 'Times New Roman', serif;
@@ -64,6 +66,7 @@
   margin-bottom: 3rem;
   margin-left: 4rem;
   margin-right: 4rem;
+  white-space: pre-wrap;
 }
 .singlePostDesc::first-letter {
   text-transform: uppercase;
@@ -80,6 +83,8 @@
   width: 80%;
   justify-content: center;
   border-radius: 0.5rem;
+  resize: vertical; /* Permet de redimensionner la hauteur du textarea uniquement verticalement */
+  overflow-y: auto; /* Affiche une barre de défilement si nécessaire */
 }
 .singlePostTitleInput {
   padding: 0.8rem;
@@ -102,8 +107,10 @@
   color: aliceblue;
 }
 .singlePostButton:hover {
+  transition: all 0.5s;
   background-color: rgb(2, 67, 67);
   cursor: pointer;
+  box-shadow: 2px 2px 2px lightgray;
 }
 .btnBottom {
   width: 100%;
